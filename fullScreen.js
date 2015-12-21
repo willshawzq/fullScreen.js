@@ -1,6 +1,6 @@
 ;(function(w, undefined) {
 
-  w.requestFullscreen = function(el) {
+  var requestFullscreen = function(el) {
     if (el.requestFullscreen) {
       el.requestFullscreen();
     } else if (el.msRequestFullscreen) {
@@ -12,7 +12,7 @@
     }
   }
 
-  w.exitFullscreen = function() {
+  var exitFullscreen = function() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.msExitFullscreen) {
@@ -24,7 +24,7 @@
         document.webkitExitFullscreen();
       }
   }
-  w.addFullScreenListener = function(event, fn) {
+  var addFullScreenListener = function(event, fn) {
     var events = {
       'change': [
           'webkitfullscreenchange',
@@ -46,18 +46,25 @@
     });
   }
 
-  w.fullScreenEnabled = function() {
+  var fullScreenEnabled = function() {
     return document.fullscreenEnabled
       || document.msFullscreenEnabled
       || document.mozFullScreenEnabled
       || document.webkitFullscreenEnabled ;
   }
 
-  w.fullScreenElement = function() {
+  var fullScreenElement = function() {
     return document.fullscreenElement
   		|| document.msFullscreenElement
   		|| document.mozFullScreenElement
   		|| document.webkitFullscreenElement ;
   }
 
+  w.fullScreen = {
+    open: requestFullscreen,
+    exit: exitFullscreen,
+    enabled: fullScreenElement,
+    element: fullScreenElement,
+    addListener: addFullScreenListener
+  }
 })(window, undefined)
