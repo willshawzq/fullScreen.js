@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="full">
+      <img src="http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg" alt="" />
+    </div>
+    <script type="text/javascript" src="fullScreen.js"></script>
+    <script type="text/javascript">
+    var oImg = document.querySelector('.full');
+    fullScreen.addListener('change', function() {
+      console.log('full screen model changed');
+    });
+    fullScreen.addListener('error', function() {
+      console.log('full screen change occured an error');
+    });
+    document.addEventListener("keydown", function(e) {
+      if (e.keyCode == 13) {
+        toggleFullScreen();
+      }
+    }, false);
+    function toggleFullScreen() {
+      if(fullScreen.element()) {
+        fullScreen.exit();
+      }else {
+        fullScreen.open(oImg);
+      }
+    }
+    </script>
+  </body>
+</html>
