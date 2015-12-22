@@ -63,7 +63,7 @@
   w.fullScreen = {
     open: requestFullscreen,
     exit: exitFullscreen,
-    enabled: fullScreenElement,
+    enabled: fullScreenEnabled,
     element: fullScreenElement,
     addListener: addFullScreenListener
   }
