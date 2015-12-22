@@ -11,10 +11,10 @@
     <script type="text/javascript" src="fullScreen.js"></script>
     <script type="text/javascript">
     var oImg = document.querySelector('.full');
-    fullScreen.addListener('change', function() {
+    fScreen.addListener('change', function() {
       console.log('full screen model changed');
     });
-    fullScreen.addListener('error', function() {
+    fScreen.addListener('error', function() {
       console.log('full screen change occured an error');
     });
     document.addEventListener("keydown", function(e) {
@@ -23,10 +23,10 @@
       }
     }, false);
     function toggleFullScreen() {
-      if(fullScreen.element()) {
-        fullScreen.exit();
+      if(fScreen.element()) {
+        fScreen.exit();
       }else {
-        fullScreen.open(oImg);
+        fScreen.open(oImg);
       }
     }
     </script>
