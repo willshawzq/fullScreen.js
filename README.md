@@ -61,9 +61,11 @@
         'MSFullscreenChange',
         'fullscreenchange'
       ].forEach(function(ev) {
-	    document.addEventListener(ev, function () {
-	  	  fn && fn();
-	  	}, false);
+	      if(ev in document) {
+	        document.addEventListener(ev, function () {
+	          fn && fn();
+	        }, false);
+	      }
 	  });
 
 ## fullscreenerror ##
