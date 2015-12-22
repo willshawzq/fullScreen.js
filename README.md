@@ -45,7 +45,7 @@
 如果当前没有元素处于全屏模式返回`null`，否则返回全屏元素。
 
 ## fullscreenEnabled ##
-该属性用于判断当前是否有元素处于全屏模式：
+该属性用于判断当前页面是否支持切换到全屏模式：
 
 	 document.fullscreenEnabled
 	    || document.msFullscreenEnabled
