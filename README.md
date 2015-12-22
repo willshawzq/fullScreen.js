@@ -53,7 +53,7 @@
 	    || document.webkitFullscreenEnabled ;
 
 ## fullscreenchange ##
-全屏模式更改事件：
+当浏览器切换全屏模式时将会触发这个事件：
 
 	  [
         'webkitfullscreenchange',
